@@ -69,7 +69,7 @@
 		</nav>
     <!-- close nav -->
 
-    <div id="content" class="">
+    <div id="content" class="mt-36 md:mt-0">
 		<div class="flex justify-center min-h-screen transition-all flex-col">
         <!-- Login Form -->
 			<div class="dashboard flex items-center justify-center rounded-lg flex-col md:flex-row gap-3 transition-all ">
@@ -85,29 +85,54 @@
 						  No. RM. 039237
 					</div>
 					<div class="social-media">
-						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-twitter"></ion-icon></span></a>
+						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-twitter" class="-z-50"></ion-icon></span></a>
 						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-facebook"></ion-icon></span></a>
 						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-instagram"></ion-icon></span></a>
 						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-linkedin"></ion-icon></span></a>
 					</div>
 				</div>
-				<div class="profil-detail flex md:items-start md:justify-start flex-col w-96 lg:w-[784px] md:w-[384px] p-6 shadow-lg rounded-lg bg-white transition-all">
+				<div class="detail flex md:items-start md:justify-start flex-col w-96 lg:w-[784px] md:w-[384px] p-6 shadow-lg rounded-lg bg-white transition-all">
 					<div class="flex md:justify-start flex-col w-full transition-all">
 	  					<div class="title border-b-2 border-sky-300 font-bold shadow-md text-slate-700 transition-all">
-							Pendaftaran Aktif
+							Riwayat Kunjungan
 						</div>
-						<div class="konten-profil flex items-center justify-center md:items-start md:justify-start flex-col mt-5 shadow-md w-80 py-5 transition-all">
-							<div class="nomor-antrian ml-3">
-								No Antrian <span class="p-1 m-2 bg-blue-400 rounded-lg text-white">0018</span>
-							</div>
-							<div class="tgl-antrian mt-5 ml-3">
-								<span class="p-1 bg-yellow-300 rounded-lg">Selasa, 25 Januari 2022</span>
-							</div>
+						<div class="konten flex items-center justify-center md:items-start md:justify-start flex-col mt-5 shadow-md w-full p-3 transition-all">
+                            <p class="font-bold">Daftar Kunjungan</p>
+                            <table class="table-fixed w-full mt-5">
+                                <thead>
+                                    <tr>
+                                    <th>Tanggal</th>
+                                    <th>Waktu</th>
+                                    <th>Petugas</th>
+                                    <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="p-5 bg-slate-200 rounded-md">
+                                    <td>Senin, 01 Januari 2022</td>
+                                    <td>09:00</td>
+                                    <td>Dhika</td>
+                                    <td><span class="bg-green-800 text-white p-1 rounded-md">Sukses</span></td>
+                                    </tr>
+                                    <tr class="p-5 rounded-md">
+                                    <td>Selasa, 03 Januari 2022</td>
+                                    <td>09:00</td>
+                                    <td>Amri</td>
+                                    <td><span class="bg-red-800 text-white p-1 rounded-md">Batal</span></td>
+                                    </tr>
+                                    <tr class="p-5 bg-slate-200 rounded-md">
+                                    <td>Rabu, 03 Januari 2022</td>
+                                    <td>09:00</td>
+                                    <td>Dhika</td>
+                                    <td><span class="bg-green-800 text-white p-1 rounded-md">Sukses</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
 						</div>
 					</div>
 					<div class="flex items-center justify-center flex-row mt-14 gap-1 transition-all">
-						<a href="<?= base_url('Kunjungan/daftar') ?>" class="bg-red-500 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Daftar Kunjungan</a>
-						<a href="<?= base_url('Kunjungan/riwayat') ?>" class="bg-sky-400 text-slate-700 p-2 rounded-md hover:bg-slate-400 transition-all">Riwayat Kunjungan</a>
+						<a href="<?= base_url('home') ?>" class="bg-sky-400 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Kembali</a>
+                        <a href="#" class="bg-blue-500 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Daftar Sekarang</a>
 					</div>
 				</div>
 			</div>
@@ -117,7 +142,7 @@
 
     <!-- Footer -->
 		<footer
-			class="bottom-0 left-0 transition-all mt-20 lg:mt-40 flex justify-center items-center h-14 absolute w-full bg-gradient-to-r from-[#3BACB6] to-[#82DBD8] shadow"
+			class="bottom-0 left-0 transition-all mt-20 lg:mt-40 flex justify-center items-center h-14 w-full md:absolute bg-gradient-to-r from-[#3BACB6] to-[#82DBD8] shadow"
 		>
 			<div class="container mx-auto flex justify-center items-center">
 				<div>

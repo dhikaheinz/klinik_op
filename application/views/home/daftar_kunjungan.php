@@ -69,7 +69,7 @@
 		</nav>
     <!-- close nav -->
 
-    <div id="content" class="">
+    <div id="content" class="mt-36 md:mt-0">
 		<div class="flex justify-center min-h-screen transition-all flex-col">
         <!-- Login Form -->
 			<div class="dashboard flex items-center justify-center rounded-lg flex-col md:flex-row gap-3 transition-all ">
@@ -85,29 +85,41 @@
 						  No. RM. 039237
 					</div>
 					<div class="social-media">
-						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-twitter"></ion-icon></span></a>
+						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-twitter" class="-z-50"></ion-icon></span></a>
 						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-facebook"></ion-icon></span></a>
 						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-instagram"></ion-icon></span></a>
 						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-linkedin"></ion-icon></span></a>
 					</div>
 				</div>
-				<div class="profil-detail flex md:items-start md:justify-start flex-col w-96 lg:w-[784px] md:w-[384px] p-6 shadow-lg rounded-lg bg-white transition-all">
+				<div class="detail flex md:items-start md:justify-start flex-col w-96 lg:w-[784px] md:w-[384px] p-6 shadow-lg rounded-lg bg-white transition-all">
 					<div class="flex md:justify-start flex-col w-full transition-all">
 	  					<div class="title border-b-2 border-sky-300 font-bold shadow-md text-slate-700 transition-all">
-							Pendaftaran Aktif
+							Pendaftaran Kunjungan
 						</div>
-						<div class="konten-profil flex items-center justify-center md:items-start md:justify-start flex-col mt-5 shadow-md w-80 py-5 transition-all">
-							<div class="nomor-antrian ml-3">
-								No Antrian <span class="p-1 m-2 bg-blue-400 rounded-lg text-white">0018</span>
-							</div>
-							<div class="tgl-antrian mt-5 ml-3">
-								<span class="p-1 bg-yellow-300 rounded-lg">Selasa, 25 Januari 2022</span>
-							</div>
+						<div class="konten flex items-center justify-center md:items-start md:justify-start flex-col mt-5 shadow-md w-full p-3 transition-all">
+                            <p class="font-bold">Pasien Umum</p>
+                            <div class="grid grid-cols-2 gap-4 w-full mt-3">
+                                <div>No RM</div>
+                                <div>039237</div>
+                                <div>Nama</div>
+                                <div>Adhika BHisana</div>
+                                <div>No KTP</div>
+                                <div>9127387687162</div>
+                                <div>No HP</div>
+                                <div>09721861221</div>
+                                <div>Tgk Kunjungan</div>
+                                <div><input type="date" name="tanggal_kunjungan"></div>
+                                <div>Waktu Kunjungan</div>
+                                <div><select name="waktu_kunjungan" id="">
+                                    <option value="#">Siang</option>
+                                    <option value="#">Malam</option>
+                                </select></div>
+                            </div>
 						</div>
 					</div>
 					<div class="flex items-center justify-center flex-row mt-14 gap-1 transition-all">
-						<a href="<?= base_url('Kunjungan/daftar') ?>" class="bg-red-500 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Daftar Kunjungan</a>
-						<a href="<?= base_url('Kunjungan/riwayat') ?>" class="bg-sky-400 text-slate-700 p-2 rounded-md hover:bg-slate-400 transition-all">Riwayat Kunjungan</a>
+						<a href="<?= base_url('home') ?>" class="bg-sky-400 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Kembali</a>
+                        <a href="#" class="bg-blue-500 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Daftar Sekarang</a>
 					</div>
 				</div>
 			</div>
@@ -117,7 +129,7 @@
 
     <!-- Footer -->
 		<footer
-			class="bottom-0 left-0 transition-all mt-20 lg:mt-40 flex justify-center items-center h-14 absolute w-full bg-gradient-to-r from-[#3BACB6] to-[#82DBD8] shadow"
+			class="bottom-0 left-0 transition-all mt-20 lg:mt-40 flex justify-center items-center h-14 w-full md:absolute bg-gradient-to-r from-[#3BACB6] to-[#82DBD8] shadow"
 		>
 			<div class="container mx-auto flex justify-center items-center">
 				<div>
