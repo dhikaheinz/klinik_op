@@ -60,11 +60,11 @@
 						>About</a
 					>
 				</li>
-				<!-- <li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
-						>Login</a
+				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
+					<a href="<?= base_url('user/logout') ?>" class="text-xl text-white font-semibold hover:text-black"
+						>Logout</a
 					>
-				</li> -->
+				</li>
 			</ul>
 		</nav>
     <!-- close nav -->
@@ -76,7 +76,7 @@
 			<h3 class="md:-mt-[266px] md:-mr-36 font-bold text-2xl text-slate-700">Profil Pasien</h3>
 				<div class="profil-detail flex items-center justify-center flex-col w-96 md:w-96 p-6 shadow-lg rounded-lg bg-white">
 					<div class="foto-profil h-30 w-30 rounded-full bg-slate-100">
-						<img src="https://source.unsplash.com/100x100/?person" alt="" class="rounded-full">
+						<img src="https://icon-library.com/images/person-image-icon/person-image-icon-2.jpg" alt="" class="rounded-full w-28 h-28">
 					</div>
 	  				<div class="nama-profil mt-2">
 						  <p class="font-bold">Adhika Bhisana</p>
@@ -98,15 +98,15 @@
 						</div>
 						<div class="konten flex items-center justify-center md:items-start md:justify-start flex-col mt-5 shadow-md w-full p-3 transition-all">
                             <p class="font-bold">Pasien Umum</p>
-                            <div class="grid grid-cols-2 gap-4 w-full mt-3">
+                            <div class="grid grid-cols-2 gap-4 w-full my-3">
                                 <div>No RM</div>
-                                <div>039237</div>
+                                <div><input type="text" name="no_rm" value="<?= $data_pasien->no_rm ?>" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" disabled></div>
                                 <div>Nama</div>
-                                <div>Adhika BHisana</div>
+                                <div><input type="text" name="nama_pasien" value="<?= $data_pasien->nama_pasien ?>" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" disabled></div>
                                 <div>No KTP</div>
-                                <div>9127387687162</div>
+                                <div><input type="text" name="nik" value="<?= $data_pasien->nik ?>" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" disabled></div>
                                 <div>No HP</div>
-                                <div>09721861221</div>
+                                <div><input type="text" name="no_hp" value="<?= $data_pasien->no_hp ?>" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" disabled></div>
                                 <div>Tgk Kunjungan</div>
                                 <div><input type="date" name="tanggal_kunjungan"></div>
                                 <div>Waktu Kunjungan</div>
@@ -114,6 +114,13 @@
                                     <option value="#">Siang</option>
                                     <option value="#">Malam</option>
                                 </select></div>
+                            </div>
+                            <p class="font-bold">Pasien Umum</p>
+                            <div class="grid grid-cols-2 gap-4 w-full mt-3">
+                                <div>Nama Saksi</div>
+                                <div><input type="text" name="nama_saksi" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm"></div>
+                                <div>Hubungan</div>
+                                <div><input type="text" name="hubungan" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm"></div>
                             </div>
 						</div>
 					</div>

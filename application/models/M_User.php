@@ -13,4 +13,8 @@ class M_User extends CI_Model {
         return false;
         }
     }
+
+    function insert_user($data){
+        $this->db->insert('users', $data);
+    }
 }

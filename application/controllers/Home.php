@@ -7,32 +7,16 @@ class Home extends CI_Controller {
     {
         parent::__construct();
 		$this->load->model('M_User');
+		$this->load->model('M_Pasien');
     }
 
 	public function index()
 	{
-		$this->load->view('home/index');
+		if ($this->session->userdata('status') != 'login') {
+			redirect('user/index');
+		}else{
+			$data['data_pasien'] = $this->M_Pasien->get_data_pasien()->row();
+			$this->load->view('home/index', $data);
+		}
 	}
-
-	// function login() {
-	// 	$result = $this->M_User->auth();
-	// 		if ($result) {
-	// 			$sess_array = array();
-	// 			foreach ($result as $row) {
-	// 			$sess_array = array(
-	// 				'id_user' => $row->id_user,
-	// 				'user' => $row->user,
-	// 				'nm_user' => $row->nm_user,
-	// 				'level' => $row->level
-	// 			);
-	// 			$this->session->set_userdata('logged_in', $sess_array);
-	// 			}
-	// 			redirect('Home'); 
-				
-	// 		} else {
-	// 			echo "alert('Hello! I am an alert box!')";ds
-	// 			message_dialog('danger', 'Error!', 'username atau password yang dimasukan salah.');
-	// 			redirect('User');
-	// 		}
-	// }
 }

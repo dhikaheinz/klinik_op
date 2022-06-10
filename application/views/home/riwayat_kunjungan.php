@@ -60,11 +60,11 @@
 						>About</a
 					>
 				</li>
-				<!-- <li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
-						>Login</a
+				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
+					<a href="<?= base_url('user/logout') ?>" class="text-xl text-white font-semibold hover:text-black"
+						>Logout</a
 					>
-				</li> -->
+				</li>
 			</ul>
 		</nav>
     <!-- close nav -->
@@ -76,7 +76,7 @@
 			<h3 class="md:-mt-[266px] md:-mr-36 font-bold text-2xl text-slate-700">Profil Pasien</h3>
 				<div class="profil-detail flex items-center justify-center flex-col w-96 md:w-96 p-6 shadow-lg rounded-lg bg-white">
 					<div class="foto-profil h-30 w-30 rounded-full bg-slate-100">
-						<img src="https://source.unsplash.com/100x100/?person" alt="" class="rounded-full">
+						<img src="https://icon-library.com/images/person-image-icon/person-image-icon-2.jpg" alt="" class="rounded-full w-28 h-28">
 					</div>
 	  				<div class="nama-profil mt-2">
 						  <p class="font-bold">Adhika Bhisana</p>
@@ -132,7 +132,7 @@
 					</div>
 					<div class="flex items-center justify-center flex-row mt-14 gap-1 transition-all">
 						<a href="<?= base_url('home') ?>" class="bg-sky-400 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Kembali</a>
-                        <a href="#" class="bg-blue-500 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Daftar Sekarang</a>
+                        <!-- <a href="#" class="bg-blue-500 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Daftar Sekarang</a> -->
 					</div>
 				</div>
 			</div>

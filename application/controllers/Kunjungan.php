@@ -7,16 +7,22 @@ class Kunjungan extends CI_Controller {
     {
         parent::__construct();
 		$this->load->model('M_User');
+        $this->load->model('M_Pasien');
     }
 
 	public function index()
 	{
-		$this->load->view('home/daftar_kunjungan');
+		if ($this->session->userdata('status') != 'login') {
+			redirect('user/index');
+		}else{
+			$this->load->view('home/daftar_kunjungan');
+		}
 	}
 
     function daftar()
     {
-        $this->load->view('home/daftar_kunjungan');
+        $data['data_pasien'] = $this->M_Pasien->get_data_pasien()->row();
+        $this->load->view('home/daftar_kunjungan', $data);
     }
     
     function riwayat()
