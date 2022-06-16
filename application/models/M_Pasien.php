@@ -19,4 +19,8 @@ class M_Pasien extends CI_Model {
 
         return $query = $this->db->get();
     }
+
+    function insert_kunjungan($data){
+        $this->db->insert('pasien_kunjungan', $data);
+    }
 }

@@ -29,4 +29,19 @@ class Kunjungan extends CI_Controller {
     {
         $this->load->view('home/riwayat_kunjungan');
     }
+
+    function create_kunjungan(){
+        $data_kunjungan = array(
+            'no_rm' => $this->input->post('no_rm'),
+            'tgl_kunjungan' => $this->input->post('tgl_kunjungan'),
+            'waktu_kunjungan' => $this->input->post('waktu_kunjungan'),
+            'nama_saksi' => $this->input->post('nama_saksi'),
+            'hubungan' => $this->input->post('hubungan'),
+            'updated_by' => $this->session->userdata('id_user'),
+            'updated_date' => date('Y-m-d')
+            );
+            
+            $this->M_Pasien->insert_kunjungan($data_kunjungan);
+            redirect('home');
+    }
 }
