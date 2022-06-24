@@ -147,7 +147,6 @@ class User extends CI_Controller {
         $toEmail = $this->input->post('email'); // siapa yg menerima email ini
         $mail->AddAddress($toEmail);
        	$mail->Send();
-
 		redirect('user');
 	}
 
