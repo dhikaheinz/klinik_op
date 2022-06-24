@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class User extends CI_Controller {
 
@@ -8,6 +10,10 @@ class User extends CI_Controller {
         parent::__construct();
 		$this->load->model('M_User');
 		$this->load->model('M_Pasien');
+
+		require APPPATH.'libraries/phpmailer/src/Exception.php';
+		require APPPATH.'libraries/phpmailer/src/PHPMailer.php';
+		require APPPATH.'libraries/phpmailer/src/SMTP.php';
     }
 
 	public function index()
@@ -98,6 +104,50 @@ class User extends CI_Controller {
 		);
 		
 		$this->M_User->insert_user($data_user);
+
+		// Send EMail
+
+	    $fromEmail = "adhika.bhisana21@gmail.com";
+        $mailContent = "<p>Hallo <b>".$this->input->post('nama_pasien')."</b>, Terima kasih sudah mendaftar akun pasien pada Klinik Ortotik Prostetik 
+						Poltekkes Jakarta I. <br> 
+						berikut ini adalah informasi akun detail Anda:</p>
+						<table>
+							<tr>
+							<td>Nama</td>
+							<td>:</td>
+							<td>".$this->input->post('nama_pasien')."</td>
+							</tr>
+							<tr>
+							<td>Nomor Rekap Medik</td>
+							<td>:</td>
+							<td>".$no_rm."</td>
+							</tr>
+							<tr>
+							<td>Tanggal Lahir</td>
+							<td>:</td>
+							<td>".$this->input->post('tgl_lahir')."</td>
+							</tr>
+						</table>
+						<p>Untuk login menggunakan Nomor Rekap Medik dan Tanggal Lahir. <br> Terima Kasih <b>".$this->input->post('nama_pasien')."</b>, Salam Sehat <br> <b>Poltekkes Jakarta I</b>.</p>"; // isi email
+						
+        $mail = new PHPMailer();
+        $mail->IsHTML(true);    // set email format to HTML
+        $mail->IsSMTP();   // we are going to use SMTP
+        $mail->SMTPAuth   = true; // enabled SMTP authentication
+        $mail->SMTPSecure = "ssl";  // prefix for secure protocol to connect to the server
+        $mail->Host       = "smtp.googlemail.com";      // setting GMail as our SMTP server
+        $mail->Port       = 465;                   // SMTP port to connect to GMail
+        $mail->Username   = $fromEmail;  // alamat email kamu
+        $mail->Password   = "qbjuukyuhatpboal";            // password GMail
+
+        $mail->setFrom('klinik_op@poltekkesjakarta1.ac.id', 'Ortotik Prostetik Poltekkes Jakarta I');  //Siapa yg mengirim email
+        $mail->Subject    = "Account Created - Pasien Klinik OP Poltekkes Jakarta I";
+        $mail->Body       = $mailContent;
+
+        $toEmail = $this->input->post('email'); // siapa yg menerima email ini
+        $mail->AddAddress($toEmail);
+       	$mail->Send();
+
 		redirect('user');
 	}
 
@@ -105,4 +155,6 @@ class User extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect('user');
 	}
+
+
 }
