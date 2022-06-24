@@ -23,4 +23,12 @@ class M_Pasien extends CI_Model {
     function insert_kunjungan($data){
         $this->db->insert('pasien_kunjungan', $data);
     }
+
+    function get_data_riwayat_kunjungan(){
+        $this->db->select('*');
+        $this->db->from('pasien_kunjungan');
+        $this->db->where('no_rm', $this->session->userdata('no_rm'));
+
+        return $query = $this->db->get();
+    }
 }

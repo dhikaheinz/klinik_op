@@ -79,10 +79,10 @@
 						<img src="https://icon-library.com/images/person-image-icon/person-image-icon-2.jpg" alt="" class="rounded-full w-28 h-28">
 					</div>
 	  				<div class="nama-profil mt-2">
-						  <p class="font-bold">Adhika Bhisana</p>
+						  <p class="font-bold"><?= $data_pasien->nama_pasien ?></p>
 					</div>
 	  				<div class="nomor-profil">
-						  No. RM. 039237
+						  No. RM. <?= $data_pasien->no_rm ?>
 					</div>
 					<div class="social-media">
 						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-twitter" class="-z-50"></ion-icon></span></a>

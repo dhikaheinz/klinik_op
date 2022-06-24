@@ -79,10 +79,10 @@
 						<img src="https://icon-library.com/images/person-image-icon/person-image-icon-2.jpg" alt="" class="rounded-full w-28 h-28">
 					</div>
 	  				<div class="nama-profil mt-2">
-						  <p class="font-bold">Adhika Bhisana</p>
+						  <p class="font-bold"><?= $data_pasien->nama_pasien ?></p>
 					</div>
 	  				<div class="nomor-profil">
-						  No. RM. 039237
+						  No. RM. <?= $data_pasien->no_rm ?>
 					</div>
 					<div class="social-media">
 						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-twitter" class="-z-50"></ion-icon></span></a>
@@ -103,29 +103,26 @@
                                     <tr>
                                     <th>Tanggal</th>
                                     <th>Waktu</th>
-                                    <th>Petugas</th>
                                     <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="p-5 bg-slate-200 rounded-md">
-                                    <td>Senin, 01 Januari 2022</td>
-                                    <td>09:00</td>
-                                    <td>Dhika</td>
-                                    <td><span class="bg-green-800 text-white p-1 rounded-md">Sukses</span></td>
+									<?php foreach($data_kunjungan as $row) {?>
+                                    <tr class="p-5 bg-slate-200 rounded-md h-6">
+                                    <td><?= $row["tgl_kunjungan"] ?></td>
+                                    <td><?= $row["waktu_kunjungan"] ?></td>
+                                    <td>
+									<?php 
+									if ($row["status"] == "Sukses") {
+										echo '<span class="bg-green-800 text-white p-1 rounded-md">Sukses</span>';
+									}elseif($row["status"] == "Proses"){
+										echo '<span class="bg-yellow-400 text-white p-1 rounded-md">Proses</span>';
+									}elseif($row["status"] == "Batal"){
+										echo '<span class="bg-red-500 text-white p-1 rounded-md">Batal</span>';
+									} ?>	
+									</td>
                                     </tr>
-                                    <tr class="p-5 rounded-md">
-                                    <td>Selasa, 03 Januari 2022</td>
-                                    <td>09:00</td>
-                                    <td>Amri</td>
-                                    <td><span class="bg-red-800 text-white p-1 rounded-md">Batal</span></td>
-                                    </tr>
-                                    <tr class="p-5 bg-slate-200 rounded-md">
-                                    <td>Rabu, 03 Januari 2022</td>
-                                    <td>09:00</td>
-                                    <td>Dhika</td>
-                                    <td><span class="bg-green-800 text-white p-1 rounded-md">Sukses</span></td>
-                                    </tr>
+									<?php } ?>
                                 </tbody>
                             </table>
 						</div>

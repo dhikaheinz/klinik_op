@@ -27,7 +27,9 @@ class Kunjungan extends CI_Controller {
     
     function riwayat()
     {
-        $this->load->view('home/riwayat_kunjungan');
+        $data['data_pasien'] = $this->M_Pasien->get_data_pasien()->row();
+        $data['data_kunjungan'] = $this->M_Pasien->get_data_riwayat_kunjungan()->result_array();
+        $this->load->view('home/riwayat_kunjungan', $data);
     }
 
     function create_kunjungan(){
@@ -37,6 +39,7 @@ class Kunjungan extends CI_Controller {
             'waktu_kunjungan' => $this->input->post('waktu_kunjungan'),
             'nama_saksi' => $this->input->post('nama_saksi'),
             'hubungan' => $this->input->post('hubungan'),
+            'status' => 'Proses',
             'updated_by' => $this->session->userdata('id_user'),
             'updated_date' => date('Y-m-d')
             );
