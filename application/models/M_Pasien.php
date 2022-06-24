@@ -41,4 +41,13 @@ class M_Pasien extends CI_Model {
 
         return $query = $this->db->get();
     }
+
+    function get_data_riwayat_kunjungan_detail($id){
+        $this->db->select('*');
+        $this->db->from('pasien_kunjungan');
+        $where = "no_rm='".$this->session->userdata('no_rm')."' AND id_kunjungan='$id'";
+        $this->db->where($where);
+
+        return $query = $this->db->get();
+    }
 }

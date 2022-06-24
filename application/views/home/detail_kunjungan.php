@@ -94,44 +94,24 @@
 				<div class="detail flex md:items-start md:justify-start flex-col w-96 lg:w-[784px] md:w-[384px] p-6 shadow-lg rounded-lg bg-white transition-all">
 					<div class="flex md:justify-start flex-col w-full transition-all">
 	  					<div class="title border-b-2 border-sky-300 font-bold shadow-md text-slate-700 transition-all">
-							Riwayat Kunjungan
+							Detail Kunjungan
 						</div>
 						<div class="konten flex items-center justify-center md:items-start md:justify-start flex-col mt-5 shadow-md w-full p-3 transition-all">
                             <p class="font-bold">Daftar Kunjungan</p>
-                            <table class="table-fixed w-full mt-5">
-                                <thead>
-                                    <tr>
-                                    <th>Tanggal</th>
-                                    <th>Waktu</th>
-                                    <th>Status</th>
-                                    <th>Opsi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-									<?php foreach($data_kunjungan as $row) {?>
-                                    <tr class="p-5 bg-slate-200 rounded-md h-9">
-                                    <td><?= $row["tgl_kunjungan"] ?></td>
-                                    <td><?= $row["waktu_kunjungan"] ?></td>
-                                    <td>
-									<?php 
-									if ($row["status"] == "Sukses") {
-										echo '<span class="bg-green-800 text-white p-1 rounded-md">Sukses</span>';
-									}elseif($row["status"] == "Proses"){
-										echo '<span class="bg-yellow-400 text-white p-1 rounded-md">Proses</span>';
-									}elseif($row["status"] == "Batal"){
-										echo '<span class="bg-red-500 text-white p-1 rounded-md">Batal</span>';
-									} ?>	
-									</td>
-									<td><a href="<?= base_url('kunjungan/riwayat_kunjungan_detail/'.$row["id_kunjungan"].'') ?>" class="p-1 bg-[#41b4be] rounded-lg text-white hover:bg-slate-600 transition-all">Detail</a></td>
-                                    </tr>
-									<?php } ?>
-									
-                                </tbody>
-                            </table>
+                            <div class="grid grid-cols-2 grid-flow-row gap-4">
+                                <div>Nomor Rekap Medik</div>
+                                <div class="font-bold"><?= $data_kunjungan->no_rm ?></div>
+                                <div>Nama Lengkap</div>
+                                <div class="font-bold"><?= $data_pasien->nama_pasien ?></div>
+                                <div>Tanggal Kunjungan</div>
+                                <div class="font-bold"><?= $data_kunjungan->tgl_kunjungan ?></div>
+                                <div>Waktu</div>
+                                <div class="font-bold"><?= $data_kunjungan->waktu_kunjungan ?></div>
+                            </div>
 						</div>
 					</div>
 					<div class="flex items-center justify-center flex-row mt-14 gap-1 transition-all">
-						<a href="<?= base_url('home') ?>" class="bg-[#32929b] text-white p-2 rounded-md hover:bg-slate-400 transition-all">Kembali</a>
+						<a href="<?= base_url('kunjungan/riwayat') ?>" class="bg-[#32929b] text-white p-2 rounded-md hover:bg-slate-400 transition-all">Kembali</a>
                         <!-- <a href="#" class="bg-blue-500 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Daftar Sekarang</a> -->
 					</div>
 				</div>

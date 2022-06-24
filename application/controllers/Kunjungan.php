@@ -47,4 +47,11 @@ class Kunjungan extends CI_Controller {
             $this->M_Pasien->insert_kunjungan($data_kunjungan);
             redirect('home');
     }
+    
+    function riwayat_kunjungan_detail($id)
+    {
+        $data['data_pasien'] = $this->M_Pasien->get_data_pasien()->row();
+        $data['data_kunjungan'] = $this->M_Pasien->get_data_riwayat_kunjungan_detail($id)->row();
+        $this->load->view('home/detail_kunjungan', $data);
+    }
 }
