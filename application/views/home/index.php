@@ -96,14 +96,17 @@
 	  					<div class="title border-b-2 border-sky-300 font-bold shadow-md text-slate-700 transition-all">
 							Pendaftaran Aktif
 						</div>
+
+						<?php foreach ($data_kunjungan_aktif as $row) { ?>
 						<div class="konten-profil flex items-center justify-center md:items-start md:justify-start flex-col mt-5 shadow-md w-80 py-5 transition-all">
 							<div class="nomor-antrian ml-3">
-								No Antrian <span class="p-1 m-2 bg-blue-400 rounded-lg text-white">0018</span>
+								No Antrian <span class="p-1 m-2 bg-blue-400 rounded-lg text-white">00<?= $row['id_kunjungan'] ?></span>
 							</div>
 							<div class="tgl-antrian mt-5 ml-3">
-								<span class="p-1 bg-yellow-300 rounded-lg">Selasa, 25 Januari 2022</span>
+								Tanggal <span class="p-1 bg-yellow-300 rounded-lg"><?= $row['tgl_kunjungan'] ?></span>
 							</div>
 						</div>
+						<?php } ?>
 					</div>
 					<div class="flex items-center justify-center flex-row mt-14 gap-1 transition-all">
 						<a href="<?= base_url('Kunjungan/daftar') ?>" class="bg-red-500 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Daftar Kunjungan</a>
