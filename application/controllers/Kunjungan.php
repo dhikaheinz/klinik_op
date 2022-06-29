@@ -97,10 +97,74 @@ class Kunjungan extends CI_Controller {
         <tr style="text-align:left;">
         <td>Pekerjaan : </td>
         </tr>
+        <tr style="text-align:left;">
+        <td></td>
+        </tr>
+        <tr style="text-align:left;">
+        <td>Saya Memahami dan menyetujui bahwa pelayanan yang diberikan kepada saya atau orang lain yang berada dalam tanggungan saya
+        dilaksanakan oleh mahasiswa/instruktur/dosen dibawah pengawasan dosen supervisor.</td>
+        </tr>
+        <tr style="text-align:left;">
+        <td>Pelayanan dari Laboratorium Klinik Jurusan Ortotik Prostetik Poltekkes Jakarta I hanya dapat di jalankan jika saya 
+        mengikuti saran-saran yang diberikan oleh mahasiswa/instruktur/dosen Laboratorium Pendidikan Jurusan Ortotik Prostetik 
+        Jakarta I sebagaimana tercantum dalam peryataan - pernyataan berikut :</td>
+        </tr>
+        <tr style="text-align:left;">
+        <td></td>
+        </tr>
+
+        <tr style="text-align:left;">
+        <td style="margin-left:3px;">- Saya memahami dan mengikuti aturan penggunaan alat serta latihan penunjang yang diperlukan sesuai instruksi yang diberikan
+        oleh mahasiswa/instruktur/dosen Laboratorium Pendidikan Jurusan Ortotik Prostetik 
+        Jakarta I yang menangani pasien :</td>
+        </tr>
+        <tr style="text-align:left;">
+        <td>Nama : </td>
+        </tr>
+        <tr style="text-align:left;">
+        <td>Umur : </td>
+        </tr>
+        <tr style="text-align:left;">
+        <td>- Saya akan menghubungi nomor kontak yang diberikan pada kartu pasien untuk meminta saran, jadwal pertemuan, maupun pertemuan 
+        tindak lanjut yang berkaitan dengan penanganan Ortotik /atau Prostetik</td>
+        </tr>
+        <tr style="text-align:left;">
+        <td>Saya harus menghubungi pihak Laboratorium Klinik Jurusan Ortotik Prostetik Poltekkes Jakarta I, apabila ada kerusakan atau
+        ketidakstabilan pada alat yang saya miliki dan dibuat sebelumnya di Laboratorium Klinik Jurusan Ortotik Prostetik Poltekkes Jakarta I</td>
+        </tr>
+        <tr style="text-align:left;">
+        <td>- Saya setuju bahwa alat yang saya terima dibiayai oleh donatur dan saya tidak berhak untuk menyalahgunakannya 
+        (tidak dipatahkan, tidak diperjualbelikan, serta tidak diperlakukan diluar aturan penggunaan yang diberikan)</td>
+        </tr>
+        <tr style="text-align:left;">
+        <td>- Saya memberikan persetujuan/izin terhadap segala aktivitas terkait seperti pengambilan gambar dan video untuk 
+        untuk tindakan ortotik dan/atau prostetik yang di perlukan menurut standar profesi terhadap pasien</td>
+        </tr>
+        <tr style="text-align:left;">
+        <td></td>
+        </tr>
+
+        <tr style="text-align:left;">
+        <td>Saya Telah Membaca dan menyatakan bahwa saya menyetujui persyaratan yang diajukan agar saya mendapatkan 
+        pelayanan ortotik dan/atau prostetik dari Laboratorium Pendidikan Jurusan Ortotik Prostetik</td>
+        </tr>
+
+        <tr style="text-align:right;">
+        <td>Jakarta, ... / .... / ....</td>
+        </tr>
+        <tr style="text-align:right;">
+        <td></td>
+        </tr>
+        <tr style="text-align:right;">
+        <td></td>
+        </tr>
+        <tr style="text-align:right;">
+        <td>Argianto</td>
+        </tr>
 
         </table>
         ';
         $pdf->writeHTML($tabel);
-        $pdf->Output('file-pdf-codeigniter.pdf', 'I');
+        $pdf->Output('file_general_consent.pdf', 'I');
     }
 }
