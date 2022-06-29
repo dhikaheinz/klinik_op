@@ -110,6 +110,10 @@
                             </div>
 						</div>
 					</div>
+					<div class="mt-5"><a href="<?= base_url('kunjungan/pdf') ?>" class="text-white p-2 bg-[#32929b] rounded-md hover:bg-slate-400 transition-all">Inform Consent</a>
+					<a href="#" class="text-white p-2 bg-[#32929b] rounded-md hover:bg-slate-400 transition-all">Surat Persetujuan</a>
+					</div>
+					
 					<div class="flex items-center justify-center flex-row mt-14 gap-1 transition-all">
 						<a href="<?= base_url('kunjungan/riwayat') ?>" class="bg-[#32929b] text-white p-2 rounded-md hover:bg-slate-400 transition-all">Kembali</a>
                         <!-- <a href="#" class="bg-blue-500 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Daftar Sekarang</a> -->
