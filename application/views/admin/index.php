@@ -61,8 +61,8 @@
 					>
 				</li>
 				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
-						>Login</a
+					<a href="<?= base_url('user/logout') ?>" class="text-xl text-white font-semibold hover:text-black"
+						>Logout</a
 					>
 				</li>
 			</ul>
@@ -70,39 +70,36 @@
     <!-- close nav -->
 
     <div id="content" class="">
-		<div class="flex items-center justify-center min-h-screen transition-all">
+		<div class="flex justify-center min-h-screen transition-all flex-col">
         <!-- Login Form -->
-			<div class="logo flex items-center justify-center flex-col">
-				<div class="h-10 mb-14">
-					<img class="w-56" src="<?= base_url('assets/img/bigdata_polkesjasa.png'); ?>" alt="">
-					<p class="text-center">Poltekkes Kemenkes Jakarta I</p>
+			<div class="dashboard flex items-center justify-center rounded-lg flex-col md:flex-row gap-3 transition-all ">
+			<h3 class="md:-mt-[266px] md:-mr-52 font-bold text-2xl text-slate-700">Dashboard Admin</h3>
+				<div class="profil-detail flex items-center justify-center flex-col w-96 md:w-96 p-6 shadow-lg rounded-lg bg-white">
+					<div class="foto-profil h-30 w-30 rounded-full bg-slate-100">
+						<img src="https://icon-library.com/images/person-image-icon/person-image-icon-2.jpg" alt="" class="rounded-full w-28 h-28">
+					</div>
+	  				<div class="nama-profil mt-2">
+						  <p class="font-bold">Administrator</p>
+					</div>
+	  				<div class="nomor-profil">
+						  
+					</div>
+					<div class="social-media">
+						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-twitter"></ion-icon></span></a>
+						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-facebook"></ion-icon></span></a>
+						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-instagram"></ion-icon></span></a>
+						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-linkedin"></ion-icon></span></a>
+					</div>
 				</div>
-				<div class="px-8 py-6 text-left bg-white shadow-lg">
-					<h3 class="text-2xl font-bold text-center text-sky-700">Klinik Ortotik Prostetik</h3>
-					<p class="text-center text-slate-600">Masukkan Data Rekam Medik dan Tanggal Lahir</p>
-					<form action="<?php echo site_url('User/aksi_login'); ?>" method="post">
-						<div class="mt-4">
-							<div>
-								<label class="block text-slate-600" for="username">Nomor Rekam Medis<label>
-										<input name="no_rm" type="text" placeholder="Nomor Rekam Medis"
-											class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm">
-							</div>
-							<div class="mt-4">
-								<label class="block text-slate-600">Tanggal Lahir<label>
-										<input name="tanggal_lahir" type="date" placeholder="Tanggal Lahir"
-											class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm">
-							</div>
-							<div>
-								<button type="submit" class="w-full py-1 mt-4 text-white bg-blue-600 rounded-md hover:bg-blue-900 shadow-md">Login</button>
-							</div>
-							<div class="mt-2">
-								<p class="text-slate-600">Belum punya Akun? <a href="<?= base_url('user/create') ?>" class="text-sm text-blue-600 hover:underline">Daftar Sekarang</a></p>
-							</div>
-							<div class="">
-								<p class="text-slate-600">Login Sebagai Admin? <a href="<?= base_url('user/login_admin') ?>" class="text-sm text-blue-600 hover:underline">Login</a></p>
-							</div>
+				<div class="profil-detail flex md:items-start md:justify-start flex-col w-96 lg:w-[784px] md:w-[384px] p-6 shadow-lg rounded-lg bg-white transition-all">
+					<div class="flex md:justify-start flex-col w-full transition-all">
+	  					<div class="title border-b-2 border-sky-300 font-bold shadow-md text-slate-700 transition-all">
+							Pendaftaran Aktif
 						</div>
-					</form>
+
+						Data Pasien
+
+					</div>
 				</div>
 			</div>
         <!-- Login Form -->

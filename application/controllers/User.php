@@ -20,6 +20,8 @@ class User extends CI_Controller {
 	{
 		if ($this->session->userdata('status') == 'login') {
 			redirect('home/index');
+		}else if ($this->session->userdata('status') == 'admin') {
+			redirect('admin/index');
 		}
 		$this->load->view('login/index_login');
 	}
@@ -50,8 +52,36 @@ class User extends CI_Controller {
 		}
 	}
 
+	function aksi_login_admin(){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+
+		$result = $this->db->get_where('users_admin', array('user' => $username, 'pass' => $password));
+		$data_user = $result->result();
+		if($result->num_rows() > 0){
+			foreach ($data_user as $row) {
+			
+			$data_session = array(
+				'username' => $username,
+				'status' => "admin"
+				);
+ 
+			$this->session->set_userdata($data_session);
+			}
+
+			redirect('admin');
+ 
+		}else{
+			redirect('user/login_admin');
+		}
+	}
+
 	function create(){
 		$this->load->view('login/daftar_pasien');
+	}
+
+	function login_admin(){
+		$this->load->view('login/login_admin');
 	}
 	
 	function create_pasien(){
