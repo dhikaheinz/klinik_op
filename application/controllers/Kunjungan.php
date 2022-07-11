@@ -188,9 +188,10 @@ class Kunjungan extends CI_Controller {
         $pdf->SetFont('');
 
         $tabel = '
-        <table border="0" cellspacing="1" cellpadding="1">
+        <table border="0" cellspacing="1" cellpadding="1" style="text-align: justify;
+        text-justify: inter-word;">
         <tr>
-            <td colspan="3" align="center"><b>Lembar Persetujuan</b></td>
+            <td colspan="3" align="center"><b><h3>Lembar Persetujuan</h3></b></td>
         </tr>
         <tr>
             <td colspan="3" align="center"><b>(Informed Consent)</b></td>

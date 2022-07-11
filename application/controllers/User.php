@@ -63,6 +63,7 @@ class User extends CI_Controller {
 			
 			$data_session = array(
 				'username' => $username,
+				'id_user' => $username,
 				'status' => "admin"
 				);
  
