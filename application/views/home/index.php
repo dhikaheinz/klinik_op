@@ -105,6 +105,9 @@
 							<div class="tgl-antrian mt-5 ml-3">
 								Tanggal <span class="p-1 bg-yellow-300 rounded-lg"><?= $row['tgl_kunjungan'] ?></span>
 							</div>
+							<div class="tgl-antrian mt-5 ml-3">
+								<span class="p-1 bg-[#41b4be] rounded-lg text-white hover:bg-slate-600 transition-all"><a href="<?= base_url('kunjungan/riwayat_kunjungan_detail/'.$row["id_kunjungan"].'') ?>">Lihat Detail</a></span>
+							</div>
 						</div>
 						<?php } ?>
 					</div>

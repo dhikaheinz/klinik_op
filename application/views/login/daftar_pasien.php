@@ -175,10 +175,10 @@
                         <div class="flex items-center justify-center gap-2 text-center">
                             <a type="button" href="<?= base_url('user') ?>" class="w-2/12 py-1 mt-4 text-white bg-slate-400 rounded-md hover:bg-blue-900 shadow-md">Kembali</a>
                             <button type="submit" class="w-2/12 py-1 mt-4 text-white bg-blue-600 rounded-md hover:bg-blue-900 shadow-md" 
-							<?php if (!isset($email) || trim($email) == '' && !isset($tgl_lahir) || trim($tgl_lahir) == '') {
-								echo 'data-bs-toggle="modal" data-bs-target="#exampleModalCenter"';
-							}else{
+							<?php if (!isset($email) || trim($email) == '' || !isset($tgl_lahir) || trim($tgl_lahir) == '') {
 								echo 'data-bs-toggle="none" data-bs-target="none"';
+							}else{
+								echo 'data-bs-toggle="modal" data-bs-target="#exampleModalCenter"';
 							} ?>
 							>Daftar</button>
 						</div>

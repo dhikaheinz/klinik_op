@@ -98,24 +98,32 @@
 						</div>
 						<div class="konten flex items-center justify-center md:items-start md:justify-start flex-col mt-5 shadow-md w-full p-3 transition-all">
                             <p class="font-bold">Daftar Kunjungan</p>
-                            <div class="grid grid-cols-2 grid-flow-row gap-4">
-                                <div>Nomor Rekap Medik</div>
-                                <div class="font-bold"><?= $data_kunjungan->no_rm ?></div>
-                                <div>Nama Lengkap</div>
-                                <div class="font-bold"><?= $data_pasien->nama_pasien ?></div>
-                                <div>Tanggal Kunjungan</div>
-                                <div class="font-bold"><?= $data_kunjungan->tgl_kunjungan ?></div>
-                                <div>Waktu</div>
-                                <div class="font-bold"><?= $data_kunjungan->waktu_kunjungan ?></div>
-                            </div>
+							<div class="konten flex items-center justify-center md:items-start md:justify-between md:flex-row flex-col w-full transition-all">
+								<div class="grid grid-cols-2 grid-flow-row gap-4">
+									<div>Nomor Rekap Medik</div>
+									<div class="font-bold"><?= $data_kunjungan->no_rm ?></div>
+									<div>Nama Lengkap</div>
+									<div class="font-bold"><?= $data_pasien->nama_pasien ?></div>
+									<div>Tanggal Kunjungan</div>
+									<div class="font-bold"><?= $data_kunjungan->tgl_kunjungan ?></div>
+									<div>Waktu</div>
+									<div class="font-bold"><?= $data_kunjungan->waktu_kunjungan ?></div>
+								</div>
+								<div class="mt-3 md:mt-0">
+									<div class="grid grid-cols-1 grid-flow-row gap-4 justify-items-end">
+										<div class="font-bold">QRCODE KUNJUNGAN</div>
+										<div class="w-36"><img src="<?= base_url('upload/qr/'.$data_kunjungan->qrcode.'') ?>" alt="QRCODE Kunjungan"></div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="mt-5">
-					<a href="<?= base_url('kunjungan/pdf_gc/'.$data_kunjungan->id_kunjungan.'') ?>" class="text-white p-2 bg-[#32929b] rounded-md hover:bg-slate-400 transition-all">Inform Consent</a>
-					<a href="<?= base_url('kunjungan/pdf_ic/'.$data_kunjungan->id_kunjungan.'') ?>" class="text-white p-2 bg-[#32929b] rounded-md hover:bg-slate-400 transition-all">Surat Persetujuan</a>
+					<!-- <a href=" // base_url('kunjungan/pdf_gc/'.$data_kunjungan->id_kunjungan.'') " class="text-white p-2 bg-[#32929b] rounded-md hover:bg-slate-400 transition-all">Inform Consent</a>
+					<a href=" //base_url('kunjungan/pdf_ic/'.$data_kunjungan->id_kunjungan.'') " class="text-white p-2 bg-[#32929b] rounded-md hover:bg-slate-400 transition-all">Surat Persetujuan</a> -->
 					</div>
 					
-					<div class="flex items-center justify-center flex-row mt-14 gap-1 transition-all">
+					<div class="flex items-center justify-center flex-row mt-7 gap-1 transition-all">
 						<a href="<?= base_url('kunjungan/riwayat') ?>" class="bg-[#32929b] text-white p-2 rounded-md hover:bg-slate-400 transition-all">Kembali</a>
                         <!-- <a href="#" class="bg-blue-500 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Daftar Sekarang</a> -->
 					</div>

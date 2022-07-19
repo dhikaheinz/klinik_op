@@ -104,13 +104,15 @@
                                 <div><input type="text" name="" value="<?= $data_pasien->no_rm ?>" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" disabled>
                                 <input type="hidden" name="no_rm" value="<?= $data_pasien->no_rm ?>" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm"></div>
                                 <div>Nama</div>
-                                <div><input type="text" name="nama_pasien" value="<?= $data_pasien->nama_pasien ?>" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" disabled></div>
+                                <div><input type="text" name="nama_pasien2" value="<?= $data_pasien->nama_pasien ?>" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" disabled>
+								<input type="text" name="nama_pasien" value="<?= $data_pasien->nama_pasien ?>" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" hidden>
+								</div>
                                 <div>No KTP</div>
                                 <div><input type="text" name="nik" value="<?= $data_pasien->nik ?>" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" disabled></div>
                                 <div>No HP</div>
                                 <div><input type="text" name="no_hp" value="<?= $data_pasien->no_hp ?>" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" disabled></div>
                                 <div>Tgl Kunjungan</div>
-                                <div><input type="date" name="tgl_kunjungan"></div>
+                                <div><input type="date" name="tgl_kunjungan" required></div>
                                 <div>Waktu Kunjungan</div>
                                 <div><select name="waktu_kunjungan" id="">
                                     <option value="Siang">Siang</option>

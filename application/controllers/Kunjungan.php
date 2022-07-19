@@ -34,13 +34,39 @@ class Kunjungan extends CI_Controller {
     }
 
     function create_kunjungan(){
+
+        $no_rm = $this->input->post('no_rm');
+        $tgl_kunjungan = $this->input->post('tgl_kunjungan');
+        $nama_pasien = $this->input->post('nama_pasien');
+
+        $kodeqr = $no_rm . $tgl_kunjungan;
+
+        $dataqr = 
+        "\n NoRM : ".$no_rm."
+        \n Tgl Kunjungan : ".$tgl_kunjungan."
+        \n Nama : ".$nama_pasien."
+        \n Poltekkes Jakarta I";
+
+        if($kodeqr){
+            $filename = 'upload/qr/'.$kodeqr;
+            if (!file_exists($filename)) { 
+                    $this->load->library('ciqrcode');
+                    $params['data'] = $dataqr;
+                    $params['level'] = 'M';
+                    $params['size'] = 4;
+                    $params['savename'] = FCPATH.'upload/qr/'.$kodeqr.".png";
+                    $this->ciqrcode->generate($params);
+            }
+        }
+
         $data_kunjungan = array(
-            'no_rm' => $this->input->post('no_rm'),
+            'no_rm' => $no_rm,
             'tgl_kunjungan' => $this->input->post('tgl_kunjungan'),
             'waktu_kunjungan' => $this->input->post('waktu_kunjungan'),
             'nama_saksi' => $this->input->post('nama_saksi'),
             'hubungan' => $this->input->post('hubungan'),
             'status' => 'Proses',
+            'qrcode' => $kodeqr . ".png",
             'updated_by' => $this->session->userdata('id_user'),
             'updated_date' => date('Y-m-d')
             );
