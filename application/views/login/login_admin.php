@@ -80,6 +80,9 @@
 				<div class="px-8 py-6 text-left bg-white shadow-lg">
 					<h3 class="text-2xl font-bold text-center text-sky-700">Klinik Ortotik Prostetik</h3>
 					<p class="text-center text-slate-600">Masukkan Username dan Password</p>
+					<?php
+					echo $this->session->flashdata('success'); 
+					?>
 					<form action="<?php echo site_url('User/aksi_login_admin'); ?>" method="post">
 						<div class="mt-4">
 							<div>

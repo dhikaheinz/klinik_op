@@ -44,10 +44,11 @@ class User extends CI_Controller {
  
 			$this->session->set_userdata($data_session);
 			}
-
+			$this->session->set_flashdata('success', '<p class="text-center text-white bg-green-600 my-3 p-2 rounded-md">Berhasil Login</p>');
 			redirect('home/index');
  
 		}else{
+			$this->session->set_flashdata('success', '<p class="text-center text-white bg-red-500 my-3 p-2 rounded-md">Data Username Dan Password Salah</p>');
 			redirect('user/index');
 		}
 	}
@@ -73,6 +74,7 @@ class User extends CI_Controller {
 			redirect('admin');
  
 		}else{
+			$this->session->set_flashdata('success', '<p class="text-center text-white bg-red-500 my-3 p-2 rounded-md">Data Username Dan Password Salah</p>');
 			redirect('user/login_admin');
 		}
 	}
@@ -138,7 +140,7 @@ class User extends CI_Controller {
 
 		// Send EMail
 
-	    $fromEmail = "adhika.bhisana21@gmail.com";
+	    $fromEmail = "klinik.op@poltekkesjakarta1.ac.id";
         $mailContent = "<p>Hallo <b>".$this->input->post('nama_pasien')."</b>, Terima kasih sudah mendaftar akun pasien pada Klinik Ortotik Prostetik 
 						Poltekkes Jakarta I. <br> 
 						berikut ini adalah informasi akun detail Anda:</p>
@@ -169,7 +171,7 @@ class User extends CI_Controller {
         $mail->Host       = "smtp.googlemail.com";      // setting GMail as our SMTP server
         $mail->Port       = 465;                   // SMTP port to connect to GMail
         $mail->Username   = $fromEmail;  // alamat email kamu
-        $mail->Password   = "qbjuukyuhatpboal";            // password GMail
+        $mail->Password   = "wzltuegaxcpaakrc";            // password GMail
 
         $mail->setFrom('klinik_op@poltekkesjakarta1.ac.id', 'Ortotik Prostetik Poltekkes Jakarta I');  //Siapa yg mengirim email
         $mail->Subject    = "Account Created - Pasien Klinik OP Poltekkes Jakarta I";
@@ -178,6 +180,7 @@ class User extends CI_Controller {
         $toEmail = $this->input->post('email'); // siapa yg menerima email ini
         $mail->AddAddress($toEmail);
        	$mail->Send();
+		$this->session->set_flashdata('success', '<p class="text-center text-white bg-sky-600 my-3 p-2 rounded-md">Data Username Dan Password Akan di Kirim ke Email <br> Pasien Silahkan Check</p>');
 		redirect('user');
 	}
 
