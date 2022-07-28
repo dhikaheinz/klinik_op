@@ -4,13 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@300&display=swap" rel="stylesheet">
-    <!-- font -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 	<script src="https://cdn.tailwindcss.com"></script>
     <script
 			type="module"
@@ -23,7 +19,7 @@
 
     <style>
       body{
-        font-family: 'Averia Sans Libre', cursive;
+        font-family: 'Rubik', sans-serif;
       }
     </style>
 	</head>
@@ -53,18 +49,18 @@
 			<ul
 				class="md:flex md:items-center md:bg-transparent bg-[#3BACB6] z-[10] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-2 px-2 md:pl-0 md:opacity-100 opacity-0 top-[-400px] transition-all"
 			>
-				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
+				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
+					<a href="<?= base_url() ?>" class="text-xl text-white font-semibold"
 						>Home</a
 					>
 				</li>
-				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
-						>About</a
+				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
+					<a href="<?= base_url('user/kritiksaran') ?>" class="text-xl text-white font-semibold"
+						>Kritik & Saran</a
 					>
 				</li>
-				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
+				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
+					<a href="#" class="text-xl text-white font-semibold"
 						>Login</a
 					>
 				</li>

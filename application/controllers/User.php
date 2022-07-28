@@ -189,5 +189,20 @@ class User extends CI_Controller {
 		redirect('user');
 	}
 
+	function kritiksaran(){
+		$this->load->view('login/index_kritiksaran');
+	}
+
+	function input_feedback(){
+		$data_fb = array(
+			'nm_fb' => $this->input->post('nm_fb'),
+			'isi_fb' => $this->input->post('isi_fb'),
+			'rate_fb' => $this->input->post('rate_fb')
+			);
+			
+			$this->M_User->insert_fb($data_fb);
+			$this->session->set_flashdata('success', '<p class="text-center text-white bg-sky-600 my-3 p-2 rounded-md">Data Sudah Berhasil Di Kirim</p>');
+			redirect('user/kritiksaran');
+	}
 
 }

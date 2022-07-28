@@ -17,4 +17,9 @@ class M_User extends CI_Model {
     function insert_user($data){
         $this->db->insert('users', $data);
     }
+
+    function insert_fb($data){
+        $this->db->insert('feedback', $data);
+    }
+
 }
