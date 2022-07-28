@@ -41,23 +41,26 @@ class Kunjungan extends CI_Controller {
 
         $kodeqr = $no_rm . $tgl_kunjungan;
 
-        $dataqr = 
-        "\n NoRM : ".$no_rm."
-        \n Tgl Kunjungan : ".$tgl_kunjungan."
-        \n Nama : ".$nama_pasien."
-        \n Poltekkes Jakarta I";
+        // $dataqr = 
+        // "\n NoRM : ".$no_rm."
+        // \n Tgl Kunjungan : ".$tgl_kunjungan."
+        // \n Nama : ".$nama_pasien."
+        // \n Poltekkes Jakarta I";
 
-        if($kodeqr){
-            $filename = 'upload/qr/'.$kodeqr;
-            if (!file_exists($filename)) { 
-                    $this->load->library('ciqrcode');
-                    $params['data'] = $dataqr;
-                    $params['level'] = 'M';
-                    $params['size'] = 4;
-                    $params['savename'] = FCPATH.'upload/qr/'.$kodeqr.".png";
-                    $this->ciqrcode->generate($params);
-            }
-        }
+        // if($kodeqr){
+        //     $filename = 'upload/qr/'.$kodeqr;
+        //     if (!file_exists($filename)) { 
+        //             $this->load->library('ciqrcode');
+        //             $params['data'] = $dataqr;
+        //             $params['level'] = 'M';
+        //             $params['size'] = 4;
+        //             $params['savename'] = FCPATH.'upload/qr/'.$kodeqr.".png";
+        //             $this->ciqrcode->generate($params);
+        //     }
+        // }
+
+        $code = "No RM : $no_rm %0A%0ANama : $nama_pasien %0A%0ATgl Kunjungan : $tgl_kunjungan";
+        $dataqr = "https://quickchart.io/qr?text=$code&centerImageUrl=http://bigdata.poltekkesjakarta1.ac.id/assets/img/logo.png&centerImageWidth=45&centerImageHeight=55";
 
         $data_kunjungan = array(
             'no_rm' => $no_rm,
@@ -66,7 +69,7 @@ class Kunjungan extends CI_Controller {
             'nama_saksi' => $this->input->post('nama_saksi'),
             'hubungan' => $this->input->post('hubungan'),
             'status' => 'Proses',
-            'qrcode' => $kodeqr . ".png",
+            'qrcode' => $dataqr,
             'updated_by' => $this->session->userdata('id_user'),
             'updated_date' => date('Y-m-d')
             );

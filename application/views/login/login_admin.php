@@ -3,25 +3,27 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/x-icon" href="<?= base_url('assets/img/logo.png') ?>" />
+		<title>Klinik Ortotik Prostetik | Poltekkes Jakarta I</title>
     <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-		<script src="https://cdn.tailwindcss.com"></script>
-    <script
-			type="module"
-			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-		></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+			<script src="https://cdn.tailwindcss.com"></script>
 		<script
-			nomodule
-			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-		></script>
+				type="module"
+				src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+			></script>
+			<script
+				nomodule
+				src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+			></script>
 
-    <style>
-      body{
-        font-family: 'Rubik', sans-serif;
-      }
-    </style>
+		<style>
+			body{
+				font-family: 'Rubik', sans-serif;
+			}
+		</style>
 	</head>
 	<body class="bg-[#f4fdff]">
     <!-- nav -->
@@ -32,7 +34,7 @@
 				<span class="text-lg md:text-2xl uppercase font-bold text-white">
 					<img
 						class="w-10 inline mr-3 hover:scale-110"
-						src="https://akupintar.id/documents/20143/0/Poltekkes+Jakarta+I.jpg"
+						src="http://bigdata.poltekkesjakarta1.ac.id/assets/img/logo.png"
 					/>
 					<span>Poltekkes Jakarta I</span>
 				</span>

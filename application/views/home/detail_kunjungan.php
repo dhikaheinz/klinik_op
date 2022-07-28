@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/x-icon" href="<?= base_url('assets/img/logo.png') ?>" />
+		<title>Klinik Ortotik Prostetik | Poltekkes Jakarta I</title>
     <!-- font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,7 +114,7 @@
 								<div class="mt-3 md:mt-0">
 									<div class="grid grid-cols-1 grid-flow-row gap-4 justify-items-end">
 										<div class="font-bold">QRCODE KUNJUNGAN</div>
-										<div class="w-36"><img src="<?= base_url('upload/qr/'.$data_kunjungan->qrcode.'') ?>" alt="QRCODE Kunjungan"></div>
+										<div class="w-36"><img src="<?= $data_kunjungan->qrcode ?>" alt="QRCODE Kunjungan"></div>
 									</div>
 								</div>
 							</div>
