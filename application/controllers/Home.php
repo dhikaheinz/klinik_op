@@ -6,6 +6,9 @@ class Home extends CI_Controller {
 	function __construct()
     {
         parent::__construct();
+		if ($this->session->userdata('status') != 'login') {
+			redirect('user/index');
+		}
 		$this->load->model('M_User');
 		$this->load->model('M_Pasien');
     }
