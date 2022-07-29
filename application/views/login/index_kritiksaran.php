@@ -56,21 +56,21 @@
 			<ul
 				class="md:flex md:items-center md:bg-transparent bg-[#3BACB6] z-[10] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-2 px-2 md:pl-0 md:opacity-100 opacity-0 top-[-400px] transition-all"
 			>
-				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
-						>Home</a
-					>
+			<a href="<?= base_url() ?>" class="text-xl text-white font-semibold hover:text-black">
+				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
+				Home
 				</li>
-				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
-						>About</a
-					>
+			</a>
+			<a href="<?= base_url('user/kritiksaran') ?>" class="text-xl text-white font-semibold hover:text-black">
+				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
+				Kritik Dan Saran
 				</li>
-				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
-						>Login</a
-					>
+			</a>
+			<a href="<?= base_url() ?>" class="text-xl text-white font-semibold hover:text-black">
+				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
+				Login
 				</li>
+			</a>
 			</ul>
 		</nav>
     <!-- close nav -->
@@ -78,7 +78,7 @@
     <div id="content" class="mt-0">
 		<div class="flex items-center justify-center min-h-screen transition-all">
         <!-- Login Form -->
-			<div class="logo flex items-center justify-center flex-col">
+			<div class="logo flex items-center justify-center flex-col my-24 md:my-0">
 				<div class="h-10 mb-14">
 					<img class="w-56" src="<?= base_url('assets/img/bigdata_polkesjasa.png'); ?>" alt="">
 					<p class="text-center">Poltekkes Kemenkes Jakarta I</p>

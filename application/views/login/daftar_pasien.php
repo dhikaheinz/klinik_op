@@ -51,21 +51,21 @@
 			<ul
 				class="md:flex md:items-center md:bg-transparent bg-[#3BACB6] z-[10] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-2 px-2 md:pl-0 md:opacity-100 opacity-0 top-[-400px] transition-all"
 			>
-				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
-						>Home</a
-					>
+			<a href="<?= base_url() ?>" class="text-xl text-white font-semibold hover:text-black">
+				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
+				Home
 				</li>
-				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
-						>About</a
-					>
+			</a>
+			<a href="<?= base_url('user/kritiksaran') ?>" class="text-xl text-white font-semibold hover:text-black">
+				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
+				Kritik Dan Saran
 				</li>
-				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full">
-					<a href="#" class="text-xl text-white font-semibold hover:text-black"
-						>Login</a
-					>
+			</a>
+			<a href="<?= base_url() ?>" class="text-xl text-white font-semibold hover:text-black">
+				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
+				Login
 				</li>
+			</a>
 			</ul>
 		</nav>
     <!-- close nav -->
@@ -89,11 +89,11 @@
                                     <label for="nama">Nama Lengkap</label>
                                     <input type="text" name="nama_pasien" class="w-full mt-2 px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" required>
                                 </div>
-                                <div class="col-span-3 md:col-span-2">
+                                <div class="col-span-2 md:col-span-2">
                                     <label for="nama">NIK</label>
                                     <input type="text" name="nik" class="w-full mt-2 px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" required>
                                 </div>
-                                <div class="col-span-1 md:col-span-2">
+                                <div class="col-span-2 md:col-span-2">
                                     <label for="nama">Jenis Kelamin</label>
 									<select name="jk" id="jk" class="w-full mt-2 px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" required>
 										<option value="Laki Laki">Laki Laki</option>
@@ -145,11 +145,11 @@
                                     <label for="nama">Nama Lengkap</label>
                                     <input type="text" name="nama_penanggung" class="w-full mt-2 px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" required>
                                 </div>
-                                <div class="col-span-3 md:col-span-2">
+                                <div class="col-span-2 md:col-span-2">
                                     <label for="nama">Hubungan</label>
                                     <input type="text" name="hubungan" class="w-full mt-2 px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm">
                                 </div>
-                                <div class="col-span-1 md:col-span-2">
+                                <div class="col-span-2 md:col-span-2">
                                     <label for="nama">Jenis Kelamin</label>
                                     <select name="jk_penanggung" id="jk_penanggung" class="w-full mt-2 px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm" required>
 										<option value="Laki Laki">Laki Laki</option>
@@ -171,8 +171,8 @@
                             </div>
 						</div>
                         <div class="flex items-center justify-center gap-2 text-center">
-                            <a type="button" href="<?= base_url('user') ?>" class="w-2/12 py-1 mt-4 text-white bg-slate-400 rounded-md hover:bg-blue-900 shadow-md">Kembali</a>
-                            <button type="submit" class="w-2/12 py-1 mt-4 text-white bg-blue-600 rounded-md hover:bg-blue-900 shadow-md" 
+                            <a type="button" href="<?= base_url('user') ?>" class="md:w-2/12 py-1 px-2 mt-4 text-white bg-slate-400 rounded-md hover:bg-blue-900 shadow-md">Kembali</a>
+                            <button type="submit" class="md:w-2/12 py-1 px-2 mt-4 text-white bg-blue-600 rounded-md hover:bg-blue-900 shadow-md" 
 							<?php if (!isset($email) || trim($email) == '' || !isset($tgl_lahir) || trim($tgl_lahir) == '') {
 								echo 'data-bs-toggle="none" data-bs-target="none"';
 							}else{

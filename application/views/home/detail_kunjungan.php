@@ -115,6 +115,7 @@
 									<div class="grid grid-cols-1 grid-flow-row gap-4 justify-items-end">
 										<div class="font-bold">QRCODE KUNJUNGAN</div>
 										<div class="w-36"><img src="<?= $data_kunjungan->qrcode ?>" alt="QRCODE Kunjungan"></div>
+										<div class="text-xs italic">*Refesh Halaman Jika QRCode Tidak Muncul</div>
 									</div>
 								</div>
 							</div>

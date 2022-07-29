@@ -51,21 +51,21 @@
 			<ul
 				class="md:flex md:items-center md:bg-transparent bg-[#3BACB6] z-[10] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-2 px-2 md:pl-0 md:opacity-100 opacity-0 top-[-400px] transition-all"
 			>
+			<a href="<?= base_url() ?>" class="text-xl text-white font-semibold hover:text-black">
 				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
-					<a href="<?= base_url() ?>" class="text-xl text-white font-semibold"
-						>Home</a
-					>
+				Home
 				</li>
+			</a>
+			<a href="<?= base_url('user/kritiksaran') ?>" class="text-xl text-white font-semibold hover:text-black">
 				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
-					<a href="<?= base_url('user/kritiksaran') ?>" class="text-xl text-white font-semibold"
-						>Kritik & Saran</a
-					>
+				Kritik Dan Saran
 				</li>
+			</a>
+			<a href="<?= base_url() ?>" class="text-xl text-white font-semibold hover:text-black">
 				<li class="px-4 py-3 md:my-0 hover:bg-[#32929b] h-full rounded-md">
-					<a href="#" class="text-xl text-white font-semibold"
-						>Login</a
-					>
+				Login
 				</li>
+			</a>
 			</ul>
 		</nav>
     <!-- close nav -->
@@ -145,7 +145,7 @@
 
     <!-- Footer -->
 		<footer
-			class="bottom-0 left-0 transition-all mt-20 lg:mt-40 flex justify-center items-center h-14 absolute w-full bg-gradient-to-r from-[#3BACB6] to-[#82DBD8] shadow"
+			class="bottom-0 left-0 transition-all flex justify-center items-center h-14 w-full bg-gradient-to-r from-[#3BACB6] to-[#82DBD8] shadow"
 		>
 			<div class="container mx-auto flex justify-center items-center">
 				<div>
