@@ -112,7 +112,7 @@
 									<div class="font-bold"><?= $data_kunjungan->waktu_kunjungan ?></div>
 								</div>
 								<div class="mt-3 md:mt-0">
-									<div class="grid grid-cols-1 grid-flow-row gap-4 justify-items-end">
+									<div class="grid grid-cols-1 grid-flow-row gap-4 md:justify-items-end justify-items-center">
 										<div class="font-bold">QRCODE KUNJUNGAN</div>
 										<div class="w-36"><img src="<?= $data_kunjungan->qrcode ?>" alt="QRCODE Kunjungan"></div>
 										<div class="text-xs italic">*Refesh Halaman Jika QRCode Tidak Muncul</div>

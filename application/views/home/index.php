@@ -74,7 +74,7 @@
     <div id="content" class="">
 		<div class="flex justify-center min-h-screen transition-all flex-col">
         <!-- Login Form -->
-			<div class="dashboard flex items-center justify-center rounded-lg flex-col md:flex-row gap-3 transition-all ">
+			<div class="dashboard flex items-center justify-center rounded-lg flex-col md:flex-row gap-3 transition-all my-24 md:my-0">
 			<h3 class="md:-mt-[266px] md:-mr-36 font-bold text-2xl text-slate-700">Profil Pasien</h3>
 				<div class="profil-detail flex items-center justify-center flex-col w-96 md:w-96 p-6 shadow-lg rounded-lg bg-white">
 					<div class="foto-profil h-30 w-30 rounded-full bg-slate-100">
@@ -125,7 +125,7 @@
 
     <!-- Footer -->
 		<footer
-			class="bottom-0 left-0 transition-all mt-20 lg:mt-40 flex justify-center items-center h-14 absolute w-full bg-gradient-to-r from-[#3BACB6] to-[#82DBD8] shadow"
+			class="bottom-0 left-0 transition-all flex justify-center items-center h-14 w-full bg-gradient-to-r from-[#3BACB6] to-[#82DBD8] shadow"
 		>
 			<div class="container mx-auto flex justify-center items-center">
 				<div>
