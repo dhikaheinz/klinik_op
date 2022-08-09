@@ -38,4 +38,32 @@ class M_Admin extends CI_Model {
         $this->db->delete('pasien_kunjungan', array('id_kunjungan' => $id));
     }
 
+    function get_data_admin(){
+        $this->db->select('*');
+        $this->db->from('users_admin');
+        
+        return $query = $this->db->get();
+    }
+
+    function get_row_admin(){
+        $this->db->select('*');
+        $this->db->from('users_admin');
+        $this->db->where('user', $this->session->userdata('username'));
+
+        return $query = $this->db->get();
+    }
+
+    function insert_admin($data){
+        $this->db->insert('users_admin', $data);
+    }
+
+    function update_admin($id_user, $data) {
+        $this->db->where('id_user', $id_user);
+        $this->db->update('users_admin', $data);
+    }
+
+    
+    function delete_admin($id){
+        $this->db->delete('users_admin', array('id_user' => $id));
+    }
 }

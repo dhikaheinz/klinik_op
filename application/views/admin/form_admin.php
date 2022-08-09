@@ -9,7 +9,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-	<link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- font -->
 		<script src="https://cdn.tailwindcss.com"></script>
     <script
@@ -72,81 +71,51 @@
 		</nav>
     <!-- close nav -->
 
-    <div id="content" class="">
+    <div id="content" class="mt-36 md:mt-0">
 		<div class="flex justify-center min-h-screen transition-all flex-col">
         <!-- Login Form -->
 			<div class="dashboard flex items-center justify-center rounded-lg flex-col md:flex-row gap-3 transition-all ">
-			<h3 class="md:-mt-[300px] md:-mr-52 font-bold text-2xl text-slate-700">Dashboard Admin</h3>
+			<h3 class="md:-mt-[266px] md:-mr-36 font-bold text-2xl text-slate-700">Profil Pasien</h3>
 				<div class="profil-detail flex items-center justify-center flex-col w-96 md:w-96 p-6 shadow-lg rounded-lg bg-white">
 					<div class="foto-profil h-30 w-30 rounded-full bg-slate-100">
 						<img src="https://icon-library.com/images/person-image-icon/person-image-icon-2.jpg" alt="" class="rounded-full w-28 h-28">
 					</div>
 	  				<div class="nama-profil mt-2">
-					  	<p class="font-bold"><?= $detail_admin->nm_user ?></p>
+                        <p class="font-bold"><?= $detail_admin->nm_user ?></p>
 					</div>
 	  				<div class="nomor-profil">
-						  
+						 
 					</div>
 					<div class="social-media">
-						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-twitter"></ion-icon></span></a>
+						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-twitter" class="-z-50"></ion-icon></span></a>
 						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-facebook"></ion-icon></span></a>
 						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-instagram"></ion-icon></span></a>
 						<a href="#" class="hover:text-slate-500"><span><ion-icon name="logo-linkedin"></ion-icon></span></a>
 					</div>
-					<div class="lihat-admin mt-5">
-					<?php
-							if ($detail_admin->level != "1") {
-								"";
-							}else {
-								echo '<a href="'.base_url('admin/daftarAdmin').'" class="p-2 bg-[#41b4be] rounded-lg text-white hover:bg-slate-600 transition-all">Daftar Admin</a>';
-							}
-						?>
-					</div>
 				</div>
-				<div class="profil-detail flex md:items-start md:justify-start flex-col w-96 lg:w-[800px] md:w-[384px] p-6 shadow-lg rounded-lg bg-white transition-all">
+				<div class="detail flex md:items-start md:justify-start flex-col w-96 lg:w-[784px] md:w-[384px] p-6 shadow-lg rounded-lg bg-white transition-all">
 					<div class="flex md:justify-start flex-col w-full transition-all">
 	  					<div class="title border-b-2 border-sky-300 font-bold shadow-md text-slate-700 transition-all">
-	  						Kunjungan
+							Form Tambah Admin
 						</div>
 						<div class="konten flex items-center justify-center md:items-start md:justify-start flex-col mt-5 shadow-md w-full p-3 transition-all">
-                            <p class="font-bold">Daftar Kunjungan</p>
-                            <table id="data_table" class="table-fixed w-full mt-5">
-                                <thead>
-                                    <tr>
-                                    <th>No RM</th>
-                                    <th>Tgl Kunjungan</th>
-                                    <th>Waktu</th>
-                                    <th>Status</th>
-                                    <th>Option</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-									<?php foreach($data_riwayat->result_array() as $row) {?>
-                                    <tr class="p-5 bg-slate-200 rounded-md h-9">
-                                    <td><?= $row["no_rm"] ?></td>
-                                    <td><?= $row["tgl_kunjungan"] ?></td>
-                                    <td><?= $row["waktu_kunjungan"] ?></td>
-                                    <td>
-										<?php 
-									if ($row["status"] == "Sukses") {
-										echo '<span class="bg-green-800 text-white p-1 rounded-md">Sukses</span>';
-									}elseif($row["status"] == "Proses"){
-										echo '<span class="bg-yellow-400 text-white p-1 rounded-md">Proses</span>';
-									}elseif($row["status"] == "Batal"){
-										echo '<span class="bg-red-500 text-white p-1 rounded-md">Batal</span>';
-									} ?>	
-									</td>
-									<td><a href="<?= base_url('admin/riwayat_kunjungan_detail/'.$row["id_kunjungan"].'/'.$row["no_rm"].'') ?>" 
-									class="p-1 bg-[#41b4be] rounded-lg text-white hover:bg-slate-600 transition-all">Detail <ion-icon name="information-circle-outline"></ion-icon></a>
-									<a href="<?= base_url('admin/delete_kunjungan/'.$row["id_kunjungan"].'') ?>" 
-									class="p-1 bg-[#e06b6b] rounded-lg text-white hover:bg-slate-600 transition-all" onclick="return confirm('Apakah Anda ingin Menghapusnya?')"><ion-icon name="trash"></ion-icon></a></td>
-                                    </tr>
-									<?php } ?>
-									
-                                </tbody>
-                            </table>
+                            <p class="font-bold">Isi Form</p>
+							<form action="<?php echo site_url('admin/tambahAdmin'); ?>" method="post">
+                            <div class="grid grid-cols-2 gap-4 w-full my-3">
+                                <div>Nama</div>
+                                <div><input type="text" name="nm_user" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm"></div>
+                                <div>Username</div>
+                                <div><input type="text" name="user" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm"></div>
+                                <div>Password</div>
+                                <div><input type="password" name="pass" class="w-full px-1 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm"></div>
+                            </div>
 						</div>
 					</div>
+					<div class="flex items-center justify-center flex-row mt-14 gap-1 transition-all">
+						<a href="<?= base_url('admin/daftarAdmin') ?>" class="bg-sky-400 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Kembali</a>
+                        <button type="submit" class="bg-blue-500 text-white p-2 rounded-md hover:bg-slate-400 transition-all">Tambah</a>
+					</div>
+					</form>
 				</div>
 			</div>
         <!-- Login Form -->
@@ -155,7 +124,7 @@
 
     <!-- Footer -->
 		<footer
-			class="bottom-0 left-0 transition-all mt-20 lg:mt-40 flex justify-center items-center h-14 absolute w-full bg-gradient-to-r from-[#3BACB6] to-[#82DBD8] shadow"
+			class="bottom-0 left-0 transition-all mt-20 lg:mt-40 flex justify-center items-center h-14 w-full md:absolute bg-gradient-to-r from-[#3BACB6] to-[#82DBD8] shadow"
 		>
 			<div class="container mx-auto flex justify-center items-center">
 				<div>
@@ -174,8 +143,7 @@
 			</div>
 		</footer>
 		<!-- Footer Close -->
-	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
       <script>
 			function Menu(e) {
 				let list = document.querySelector("ul");
@@ -187,11 +155,6 @@
 					  list.classList.remove("top-[70px]"),
 					  list.classList.remove("opacity-100"));
 			}
-
-			$('#data_table').dataTable( {
-				"ordering": false,
-				"dom": 'ftip'
-			} );
 		</script>
 	</body>
 </html>

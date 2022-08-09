@@ -16,6 +16,7 @@ class Admin extends CI_Controller {
 		if ($this->session->userdata('status') != 'admin') {
 			redirect('user/index');
 		}else{
+            $data['detail_admin'] = $this->M_Admin->get_row_admin()->row();
 			$data['data_riwayat'] = $this->M_Admin->get_data_riwayat_kunjungan_all();
 			$this->load->view('admin/index', $data);
 		}
@@ -289,4 +290,51 @@ class Admin extends CI_Controller {
         $pdf->Output('file_general_consent.pdf', 'I');
     }
 
+    function daftarAdmin(){
+        $data['detail_admin'] = $this->M_Admin->get_row_admin()->row();
+        $data['data_admin'] = $this->M_Admin->get_data_admin();
+        $this->load->view('admin/daftar_admin', $data);
+    }
+
+    function createAdmin(){
+        $data['detail_admin'] = $this->M_Admin->get_row_admin()->row();
+        $this->load->view('admin/form_admin', $data);
+    }
+
+    function tambahAdmin(){
+        $data_admin = array(
+            'nm_user' => $this->input->post('nm_user'),
+            'user' => $this->input->post('user'),
+            'pass' => $this->input->post('pass')
+            );
+            
+            $this->M_Admin->insert_admin($data_admin);
+            $this->session->set_flashdata('success', '<p class="text-center text-white bg-sky-500 my-2 p-2 rounded-md">Data Sudah Di Simpan</p>');
+            redirect('admin/daftarAdmin');
+    }
+
+    function detailAdmin(){
+        $data['detail_admin'] = $this->M_Admin->get_row_admin()->row();
+        $data['data_detail'] = $this->M_Admin->get_row_admin()->row();
+        $this->load->view('admin/detail_admin', $data);
+    }
+
+    function updateAdmin($id){
+        $id_admin = $id;
+		$data_admin = array(
+            'nm_user' => $this->input->post('nm_user'),
+            // 'user' => $this->input->post('user'),
+            'pass' => $this->input->post('pass')
+            );
+            
+        $this->session->set_flashdata('success', '<p class="text-center text-white bg-sky-500 my-2 p-2 rounded-md">Data Sudah Di Update</p>');
+        $this->M_Admin->update_admin($id_admin, $data_admin);
+        redirect('admin/daftarAdmin');
+    }
+
+    function deleteAdmin($id){
+		$this->M_Admin->delete_admin($id);
+        $this->session->set_flashdata('success', '<p class="text-center text-white bg-red-500 my-2 p-2 rounded-md">Data Sudah Di Delete</p>');
+		redirect('admin/daftarAdmin');
+	}
 }

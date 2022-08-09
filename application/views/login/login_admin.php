@@ -93,7 +93,7 @@
 							</div>
 							<div class="mt-4">
 								<label class="block text-slate-600">Password<label>
-                                        <input name="password" type="text" placeholder="Masukkan Username"
+                                        <input name="password" type="password" placeholder="Masukkan Password"
 											class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm">
 							</div>
 							<div>
