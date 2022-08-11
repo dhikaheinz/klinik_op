@@ -61,7 +61,6 @@ class M_Admin extends CI_Model {
         $this->db->where('id_user', $id_user);
         $this->db->update('users_admin', $data);
     }
-
     
     function delete_admin($id){
         $this->db->delete('users_admin', array('id_user' => $id));

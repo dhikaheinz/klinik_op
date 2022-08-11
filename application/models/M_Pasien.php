@@ -50,4 +50,15 @@ class M_Pasien extends CI_Model {
 
         return $query = $this->db->get();
     }
+
+    function update_pasien($id_pasien, $data_pasien) {
+        $this->db->where('id_pasien', $id_pasien);
+        $this->db->update('pasien', $data_pasien);
+    }
+
+    function update_users($id_pasien, $no_rm, $data_users) {
+        $this->db->where('no_rm', $no_rm);
+        $this->db->update('users', $data_users);
+    }
+
 }

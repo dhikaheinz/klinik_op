@@ -75,8 +75,11 @@
 		<div class="flex justify-center min-h-screen transition-all flex-col">
         <!-- Login Form -->
 			<div class="dashboard flex items-center justify-center rounded-lg flex-col md:flex-row gap-3 transition-all my-24 md:my-0">
-			<h3 class="md:-mt-[266px] md:-mr-36 font-bold text-2xl text-slate-700">Profil Pasien</h3>
-				<div class="profil-detail flex items-center justify-center flex-col w-96 md:w-96 p-6 shadow-lg rounded-lg bg-white">
+			<h3 class="md:-mt-[290px] md:-mr-40 font-bold text-2xl text-slate-700">Profil Pasien</h3>
+				<div class="profil-detail flex items-center justify-center flex-col w-96 md:w-96 px-6 pb-6 shadow-lg rounded-lg bg-white">
+					<div class="nama-profil mt-2 self-end">
+						  <a href="<?= base_url('pasien/detail') ?>" class="text-white px-1 pb-1 pt-3 bg-[#3BACB6] rounded-md hover:bg-slate-400 transition-all"><ion-icon name="create-outline" class="text-2xl"></ion-icon></a>
+					</div>
 					<div class="foto-profil h-30 w-30 rounded-full bg-slate-100">
 						<img src="https://icon-library.com/images/person-image-icon/person-image-icon-2.jpg" alt="" class="rounded-full w-28 h-28">
 					</div>
@@ -98,7 +101,9 @@
 	  					<div class="title border-b-2 border-sky-300 font-bold shadow-md text-slate-700 transition-all">
 							Pendaftaran Aktif
 						</div>
-
+						<?php
+							echo $this->session->flashdata('success'); 
+						?>
 						<?php foreach ($data_kunjungan_aktif as $row) { ?>
 						<div class="konten-profil flex items-center justify-center md:items-start md:justify-start flex-col mt-5 shadow-md w-80 py-5 transition-all">
 							<div class="nomor-antrian ml-3">
