@@ -75,7 +75,7 @@
 		<div class="flex justify-center min-h-screen transition-all flex-col">
         <!-- Login Form -->
 			<div class="dashboard flex items-center justify-center rounded-lg flex-col md:flex-row gap-3 transition-all my-24 md:my-0">
-			<h3 class="md:-mt-[290px] md:-mr-40 font-bold text-2xl text-slate-700">Profil Pasien</h3>
+				<h3 class="md:-mt-[290px] md:-mr-40 font-bold text-2xl text-slate-700">Profil Pasien</h3>
 				<div class="profil-detail flex items-center justify-center flex-col w-96 md:w-96 px-6 pb-6 shadow-lg rounded-lg bg-white">
 					<div class="nama-profil mt-2 self-end">
 						  <a href="<?= base_url('pasien/detail') ?>" class="text-white px-1 pb-1 pt-3 bg-[#3BACB6] rounded-md hover:bg-slate-400 transition-all"><ion-icon name="create-outline" class="text-2xl"></ion-icon></a>

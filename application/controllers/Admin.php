@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class Admin extends CI_Controller {
 
@@ -9,6 +11,10 @@ class Admin extends CI_Controller {
 		$this->load->model('M_Admin');
 		$this->load->model('M_Pasien');
 		$this->load->library('pdf');
+
+        require APPPATH.'libraries/phpmailer/src/Exception.php';
+		require APPPATH.'libraries/phpmailer/src/PHPMailer.php';
+		require APPPATH.'libraries/phpmailer/src/SMTP.php';
     }
 
     public function index()
@@ -38,6 +44,50 @@ class Admin extends CI_Controller {
             'updated_by' => $this->session->userdata('id_user'),
             'updated_date' => date('Y-m-d')
             );
+
+        $no_rm = $this->input->post('no_rm');
+        $data['dt_pasien'] = $this->M_Admin->get_data_pasien_satu($no_rm)->row();
+
+        //sendMail
+        $fromEmail = "klinik.op@poltekkesjakarta1.ac.id";
+        $mailContent = "<p>Hallo <b>".$this->input->post('nama_pasien')."</b>, Berikut adalah status dari kunjungan anda<br></p>
+                        <table>
+                            <tr>
+                            <td>Nama</td>
+                            <td>:</td>
+                            <td>".$this->input->post('nama_pasien')."</td>
+                            </tr>
+                            <tr>
+                            <td>Nomor Rekap Medik</td>
+                            <td>:</td>
+                            <td>".$no_rm."</td>
+                            </tr>
+                            <tr>
+                            <td>Status Kunjungan</td>
+                            <td>:</td>
+                            <td><b>".$this->input->post('status')."</b></td>
+                            </tr>
+                        </table>
+                        <p><br> Terima Kasih <b>".$this->input->post('nama_pasien')."</b>, Salam Sehat <br> <b>Poltekkes Jakarta I</b>.</p>"; // isi email
+                        
+        $mail = new PHPMailer();
+        $mail->IsHTML(true);    // set email format to HTML
+        $mail->IsSMTP();   // we are going to use SMTP
+        $mail->SMTPAuth   = true; // enabled SMTP authentication
+        $mail->SMTPSecure = "ssl";  // prefix for secure protocol to connect to the server
+        $mail->Host       = "smtp.googlemail.com";      // setting GMail as our SMTP server
+        $mail->Port       = 465;                   // SMTP port to connect to GMail
+        $mail->Username   = $fromEmail;  // alamat email kamu
+        $mail->Password   = "wzltuegaxcpaakrc";            // password GMail
+
+        $mail->setFrom('klinik_op@poltekkesjakarta1.ac.id', 'Ortotik Prostetik Poltekkes Jakarta I');  //Siapa yg mengirim email
+        $mail->Subject    = "Account Data Updated - Pasien Klinik OP Poltekkes Jakarta I";
+        $mail->Body       = $mailContent;
+
+        $email = $data['dt_pasien']->email;
+        $toEmail = strval($data['dt_pasien']->email); // siapa yg menerima email ini
+        $mail->AddAddress($toEmail);
+        $mail->Send();
             
         $this->M_Admin->update_kunjungan($data_kunjungan, $id_kunjungan);
         redirect('admin');

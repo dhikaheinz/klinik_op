@@ -29,6 +29,14 @@ class M_Admin extends CI_Model {
         return $query = $this->db->get();
     }
 
+    function get_data_pasien_satu($no_rm){
+        $this->db->select('*');
+        $this->db->from('pasien');
+        $this->db->where('no_rm', $no_rm);
+
+        return $query = $this->db->get();
+    }
+
     function update_kunjungan($data, $id_kunjungan) {
         $this->db->where('id_kunjungan', $id_kunjungan);
         $this->db->update('pasien_kunjungan', $data);

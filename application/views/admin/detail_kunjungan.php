@@ -104,6 +104,8 @@
 								<div class="grid grid-cols-2 grid-flow-row gap-4">
 									<div>Nomor Rekap Medik</div>
 									<div class="font-bold"><?= $data_kunjungan->no_rm ?>
+									<input type="hidden" name="no_rm" value="<?= $data_kunjungan->no_rm ?>">
+									<input type="hidden" name="nama_pasien" value="<?= $data_pasien->nama_pasien ?>">
 									</div>
 									<div>Nama Lengkap</div>
 									<div class="font-bold"><?= $data_pasien->nama_pasien ?></div>
